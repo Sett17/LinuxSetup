@@ -11,6 +11,7 @@ curl -s https://raw.githubusercontent.com/Sett17/LinuxSetup/main/.inputrc --outp
 echo -e '\e[31mInstalled Scripts:\e[0m'
 ls -alih ~/.{bashrc,bash_aliases,vimrc,inputrc}
 
+DEBIAN_FRONTEND=noninteractive
 otherPackages=("git", "highlight", "vim", "binwalk", "fd-find", "jq", "wget", "tcpdump")
 echo -e '\e[31mInstalling other packages\e[0m'
 for pkg in ${otherPackages[@]}; do
@@ -31,6 +32,10 @@ for pkg in ${otherBrewPackages[@]}; do
   echo "Installing brew $pkg"
   brew install $pkg
 done
+
+echo -e '\e[31mInstalling SDKMAN\e[0m'
+curl -s "https://get.sdkman.io" | bash
+source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 echo -e '\e[31mInstalling Devfile\e[0m'
 wget $(curl -s https://api.github.com/repos/sett17/devfile/releases | jq -r 'first.assets[] | select(.name|startswith("dev-linux")) | .browser_download_url') -O ~/.local/bin/dev && chmod +x ~/.local/bin/dev
