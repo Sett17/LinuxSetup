@@ -12,12 +12,13 @@ echo -e '\e[32mInstalled Scripts:\e[0m'
 ls -alih ~/.{bashrc,bash_aliases,vimrc,inputrc}
 
 DEBIAN_FRONTEND=noninteractive
-otherPackages=("git", "highlight", "vim", "binwalk", "fd-find", "jq", "wget", "zip", "unzip", "tcpdump")
-echo -e '\e[32mInstalling other packages\e[0m'
-for pkg in ${otherPackages[@]}; do
-  echo "Installing $pkg"
-  sudo apt-get -qq -y install $pkg
-done
+# otherPackages=("git", "highlight", "vim", "binwalk", "fd-find", "jq", "wget", "zip", "unzip", "tcpdump")
+# echo -e '\e[32mInstalling other packages\e[0m'
+# for pkg in ${otherPackages[@]}; do
+#   echo "Installing $pkg"
+#   sudo apt-get -qq -y install $pkg
+# done
+sudo apt-get install -qq -y git highlight vim binwalk fd-find jq wget zip unzip tcpdump
 
 echo -e '\e[32mInstalling brew\e[0m'
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
