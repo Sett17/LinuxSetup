@@ -23,7 +23,7 @@ sudo apt-get -qq update
 sudo apt-get install -qq -y git highlight vim binwalk fd-find jq wget zip unzip tcpdump
 
 echo -e '\e[32mInstalling brew\e[0m'
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" > /dev/null
 test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
 test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 test -r ~/.bash_profile && echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.bash_profile
@@ -43,8 +43,8 @@ source "$HOME/.sdkman/bin/sdkman-init.sh"
 echo -e '\e[32mInstalling Devfile\e[0m'
 wget $(curl -s https://api.github.com/repos/sett17/devfile/releases | jq -r 'first.assets[] | select(.name|startswith("dev-linux")) | .browser_download_url') -O ~/.local/bin/dev && chmod +x ~/.local/bin/dev
 
-echo -e '\e[32mSourcing the bash files\e[0m'
-source ~/.bashrc
-bind -f ~/.inputrc
-
 echo -e '\e[32mAll done!\e[0m'
+
+echo -e '\e[32mTo source config files, run:\e[0m'
+echo -e '\e[32m  source ~/.bashrc\e[0m'
+echo -e '\e[32m  bind -f ~/.inputrc\e[0m'
