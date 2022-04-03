@@ -43,6 +43,8 @@ source "$HOME/.sdkman/bin/sdkman-init.sh"
 echo -e '\e[32mInstalling Devfile\e[0m'
 wget $(curl -s https://api.github.com/repos/sett17/devfile/releases | jq -r 'first.assets[] | select(.name|startswith("dev-linux")) | .browser_download_url') -O ~/.local/bin/dev && chmod +x ~/.local/bin/dev
 
+echo 'export PATH="$HOME/.local/bin/:$PATH"' >> ~/.bashrc
+
 echo -e '\e[32mAll done!\e[0m'
 
 echo -e '\e[32mTo source config files, run:\e[0m'
