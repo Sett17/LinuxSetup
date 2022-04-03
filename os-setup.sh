@@ -18,6 +18,8 @@ DEBIAN_FRONTEND=noninteractive
 #   echo "Installing $pkg"
 #   sudo apt-get -qq -y install $pkg
 # done
+echo -e '\e[32mInstalling other packages\e[0m'
+sudo apt-get -qq update
 sudo apt-get install -qq -y git highlight vim binwalk fd-find jq wget zip unzip tcpdump
 
 echo -e '\e[32mInstalling brew\e[0m'
