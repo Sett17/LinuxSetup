@@ -4,7 +4,9 @@ filetype  on
 filetype plugin on
 filetype indent on
 syntax    on
-set   relativenumber
+set relativenumber
+set number
+set number relativenumber
 set     ruler
 set   cursorline
 "set    cursorcolumn
