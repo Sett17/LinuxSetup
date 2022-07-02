@@ -169,3 +169,12 @@ export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 export PATH="/opt/kotlin-native-linux-x86_64-1.6.20-RC/bin:$PATH"
 
+export PATH="/home/sett/.local/bin:$PATH"
+. "$HOME/.cargo/env"
+
+# pnpm
+export PNPM_HOME="/home/sett/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
+
+. /home/sett/.local/z/z.sh
