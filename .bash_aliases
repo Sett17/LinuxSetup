@@ -62,7 +62,7 @@ setPS1 () {
   if [ -z $PS1GITBRANCH ];then
     PS1GIT=""
   else
-    PS1GIT=" 🦑 $PS1GITBRANCH"
+    PS1GIT="  $PS1GITBRANCH"
   fi
   PS1="\n$PS1SYMBOL $PS1USER$PS1DIRCOLOR$PS1DIR$PS1GIT$PS1R\n"
 }
