@@ -170,7 +170,6 @@ export SDKMAN_DIR="$HOME/.sdkman"
 export PATH="/opt/kotlin-native-linux-x86_64-1.6.20-RC/bin:$PATH"
 
 export PATH="/home/sett/.local/bin:$PATH"
-. "$HOME/.cargo/env"
 
 # pnpm
 export PNPM_HOME="/home/sett/.local/share/pnpm"
